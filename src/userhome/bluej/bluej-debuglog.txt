@@ -1,0 +1,8 @@
+BlueJ run started: Sat Jan 27 11:19:31 IST 2018
+BlueJ version 4.1.0
+Java version 1.8.0_131
+Virtual machine: Java HotSpot(TM) Client VM 25.131-b11 (Oracle Corporation)
+Running on: Windows 10 10.0 (x86)
+Java Home: D:\bluej\jdk\jre
+----
+Detected language "english" based on iso639-2 code "eng"
