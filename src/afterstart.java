@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import com.mysql.cj.jdbc.ConnectionImpl;
+import com.mysql.cj.jdbc.StatementImpl;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import java.sql.DriverManager;
@@ -127,9 +129,9 @@ public class afterstart extends javax.swing.JFrame {
         rn=jTextField1.getText();
         c=jTextField2.getText();
         try{Class.forName("java.sql.DriverManager");
-            Connection con=(Connection)
-            DriverManager.getConnection("jdbc:mysql://localhost:3306/projectmnt","root","1234");
-            Statement stmt=(Statement)con.createStatement();
+            ConnectionImpl con=(ConnectionImpl)
+   DriverManager.getConnection("jdbc:mysql://localhost:3306/projectmnt","root","1234"); 
+StatementImpl stmt=(StatementImpl)con.createStatement();
             String query="SELECT * from logindetails,health where logindetails.rollno='"+rn+"'&&logindetails.grade='"+c+"'&&health.rollno='"+rn+"'&&health.grade='"+c+"';";
             ResultSet rs=stmt.executeQuery(query);
             int found=0;

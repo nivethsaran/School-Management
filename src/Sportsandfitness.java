@@ -1,4 +1,6 @@
 
+import com.mysql.cj.jdbc.ConnectionImpl;
+import com.mysql.cj.jdbc.StatementImpl;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import java.sql.DriverManager;
@@ -132,9 +134,9 @@ double height,weight,bmi;
         String grade=jTextField2.getText();
         String admno=grade.concat(rollno);
         try{Class.forName("java.sql.DriverManager");
-Connection con=(Connection)
-        DriverManager.getConnection("jdbc:mysql://localhost:3306/projectmnt","root","1234");
-Statement stmt=(Statement)con.createStatement();
+ConnectionImpl con=(ConnectionImpl)
+   DriverManager.getConnection("jdbc:mysql://localhost:3306/projectmnt","root","1234"); 
+StatementImpl stmt=(StatementImpl)con.createStatement();
     String query="INSERT INTO health VALUES('"+bmi+"','"+weight+"','"+height+"','"+sport+"','"+house+"','"+rollno+"','"+grade+"','"+admno+"');";
 stmt.executeUpdate(query);
 }

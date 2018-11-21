@@ -1,4 +1,6 @@
  
+import com.mysql.cj.jdbc.ConnectionImpl;
+import com.mysql.cj.jdbc.StatementImpl;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import java.sql.DriverManager;
@@ -144,9 +146,9 @@ public class stuver extends javax.swing.JFrame {
         String grade=jTextField3.getText();
         try{
             Class.forName("java.sql.DriverManager");
-            Connection con=(Connection)
-            DriverManager.getConnection("jdbc:mysql://localhost:3306/projectmnt","root","1234");
-            Statement stmt=(Statement)con.createStatement();
+            ConnectionImpl con=(ConnectionImpl)
+   DriverManager.getConnection("jdbc:mysql://localhost:3306/projectmnt","root","1234"); 
+StatementImpl stmt=(StatementImpl)con.createStatement();
             String query="SELECT name,rollno,grade from logindetails where name='"+name+"'&& rollno='"+rollno+"'&& grade='"+grade+"';";
             ResultSet rs=stmt.executeQuery(query);
             int found=0;
